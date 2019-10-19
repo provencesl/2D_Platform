@@ -1,0 +1,23 @@
+TileMap的基础使用：
+
+1）TileMap的组成：
+（1）TileAssets
+ (2) Grid
+ (3) Tilemap Palette
+ (4) Custom Brushes
+ 
+ 
+ 一.创建TilePatte
+ 
+ Window->Tile Palette
+ 接下来就是新建调色板 Create  New Palette，因此准备在调色板放置“墙”和“地板”两种瓦片。
+ 名字Background。Create之后，跳出文件窗口，保存调色板位置 TileAssets.
+ 
+ 
+ 接下来就是拖动贴图资源到TilePalette，Unity将图片转asset，同样存到TileAssets
+ 
+ 二.新建空白Tilemap。
+ 
+ 三.使用TilelPalette绘制Tilemap
+ 
+ 
