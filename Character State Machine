@@ -1,0 +1,75 @@
+状态机：
+
+===State====
+
+public clas State
+{
+
+  public StateMachine Machine;
+  
+  public State()
+  {}
+  
+  
+  public static implicit operator bool(State state)
+  {
+    return state != null;
+  }
+  
+  public virtual void OnStateInitialize(StateMachine machine)
+  {
+    Machine = machine;
+  }
+  
+  public virtual void OnStateEnter()
+  {}
+  
+  public virtual void OnStateExit()
+  {}
+  
+  public virtual void Update()
+  {}
+  
+  
+}
+
+====StateMachine ====
+
+public StateMachine : MonoBehaviour
+{
+  protected List<State> stateList = new List<State>();
+  protected State currentState;
+  
+  void Update()
+  {
+    currentState.Update();
+  }
+  
+  
+  //转换当前状态到目标状态
+  protected virtual bool SwitchState(State state)
+  {
+    bool success = false;
+    if(state && state != currentState)
+    {
+      if(currentState)
+      {
+        currentState.onStateExit();
+      }
+      
+      currentState = state;
+      currentState.OnStateEnter();
+      success = true;
+      
+    }
+    return success;
+  }
+  
+  
+  
+  
+  
+
+
+}
+
