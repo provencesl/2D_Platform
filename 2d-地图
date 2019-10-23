@@ -1,0 +1,62 @@
+定义Tile类型：
+
+public enum TileType
+{
+  Empty,
+  Block,
+  OneWay,
+  //.......
+  //碰撞类型和特征地图（Ground,Water）
+}
+
+
+public class Map
+{
+
+  private TileType[,] mTiles;
+  //存储Sprite保存Tile信息
+  private SpriteRender[,] mTileSprites;
+  //Tile保存的位置
+  public Vector3 mPosition;
+  //Tile的信息
+  public int mWidth = 80;
+  public int mHeight = 60;
+  
+  //Tile像素
+  public const int cTileSize = 16;
+  
+  //世界坐标转换为Map地图坐标
+  public Vecotr2i GetMapTileAtPoint(Vector2 point)
+  {
+  
+  }
+  
+  
+  
+  //判断是否是陆地Ground类型Tile
+  public bool IsGround(int x,int y)
+  {
+    if(x < 0 || x >= width
+       || y <0 || y >= mHeight 
+       )
+       return false;
+       
+       return (mTiles[x,y] == TileType.OneWay || mTiles[x,y] == TileType.Block;);
+       
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+}
+
+
+
+
+
+
+
