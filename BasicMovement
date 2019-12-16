@@ -1,0 +1,18 @@
+一般来说，一个简单的物理系统首先是基于速度的。先是只处理速度和位置，而非处理力或者加速度。
+
+
+
+
+
+public class Movement : MonoBehaviour
+{
+  public float moveHorizontal;
+  public float moveVertical;
+  public float speed;
+  
+  
+  
+  
+
+
+} 
